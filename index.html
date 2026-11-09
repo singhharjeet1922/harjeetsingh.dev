@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- EDIT: page title and description (shown in Google) -->
 <title>Harjeet Singh | WordPress &amp; WooCommerce Developer</title>
-<meta name="description" content="Freelance WordPress and WooCommerce developer. Online stores, custom plugins and multilingual sites.">
+<meta name="description" content="WordPress and WooCommerce developer in India. Custom plugins, payment gateway integrations, migrations and online stores.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -106,6 +106,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
 footer.site{padding:2.5rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
 footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Project screenshots */
+.card{min-height:0}
+.shot{position:relative;aspect-ratio:16/10;border-radius:.6rem;overflow:hidden;margin-bottom:1.1rem;background:linear-gradient(135deg,var(--line),var(--bg));display:grid;place-items:center;text-align:center;padding:.75rem;color:var(--muted);font-size:.8rem;transform:translateZ(30px)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.card .tag{margin-bottom:.3rem}
+.more{margin:2.5rem 0 0;max-width:46rem}.more a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -133,34 +140,67 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
   <div class="layer l5 hot" data-speed="0.22" aria-hidden="true">RTL ready</div>
   <div class="wrap hero">
   <h1>WordPress sites that <span>sell</span> and scale.</h1>
-  <p class="lead">I build WooCommerce stores, custom plugins and multilingual websites for small businesses and agencies. Based in India, working with clients worldwide.</p>
+  <p class="lead">I build WooCommerce stores, custom plugins and payment integrations for businesses and agencies. Based in Dharamshala, India, working with clients worldwide.</p>
   <a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#work">See my work</a>
 </div>
 </div>
 <div class="wrap">
   <div class="facts">
     <div><strong>7+</strong><span>years with WordPress</span></div>
-    <div><strong>2</strong><span>people: developer and designer</span></div>
+    <div><strong>25+</strong><span>websites delivered</span></div>
+    <div><strong>3</strong><span>payment gateways integrated (Razorpay, PayPal, PayUmoney)</span></div>
     <div><strong>RTL</strong><span>Hebrew and right-to-left sites</span></div>
-    <div><strong>[00]</strong><span>[projects delivered]</span></div>
   </div>
-  <!-- EDIT: client or brand names you have worked with (delete if none) -->
-  <div class="logos" aria-label="Brands I have worked with"><span>Organic Fiji</span><span>[Client]</span><span>[Client]</span><span>[Client]</span></div>
+  <div class="logos" aria-label="Brands I have worked with"><span>Telco</span><span>Netenrich</span><span>Precious Carbon</span><span>Norbulingka</span><span>BeautyBarn</span><span>Srishti Collective</span></div>
 </div>
 
 <!-- 2. WORK: copy a whole card to add projects -->
 <section id="work">
   <div class="wrap">
     <h2>Selected work</h2>
-    <p class="intro">A few recent projects. Each one links to the live site.</p>
+    <p class="intro">Recent projects, each linking to the live site. Screenshots load from the images folder next to this file.</p>
     <div class="grid">
-      <a class="card" href="https://organicfiji.com" target="_blank" rel="noopener"><span class="tag">WooCommerce</span><h3>Organic Fiji</h3><p>Soap brand store, built end to end: design, products and checkout.</p></a>
-      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Custom plugin]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
-      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Hebrew / RTL]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
-      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Elementor]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
-      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Redesign]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
-      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Booking system]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+      <a class="card" href="https://organicfiji.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/organic-fiji.jpg</span><img src="images/organic-fiji.jpg" alt="Organic Fiji website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">WooCommerce store</span><h3>Organic Fiji</h3><p>Soap brand store, built end to end: design, products and checkout.</p></a>
+      <a class="card" href="https://preciouscarbon.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/precious-carbon.jpg</span><img src="images/precious-carbon.jpg" alt="Precious Carbon website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">WooCommerce, Vue.js</span><h3>Precious Carbon</h3><p>Custom WooCommerce templates, Vue.js product display and Razorpay payments.</p></a>
+      <a class="card" href="https://www.telco.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/telco.jpg</span><img src="images/telco.jpg" alt="Telco website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Custom plugin</span><h3>Telco</h3><p>Partner portal plugin with custom templates and custom filters.</p></a>
+      <a class="card" href="https://taxiinindia.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/taxi-in-india.jpg</span><img src="images/taxi-in-india.jpg" alt="Taxi in India website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Booking plugin</span><h3>Taxi in India</h3><p>Custom taxi booking plugin with a custom payment gateway.</p></a>
+      <a class="card" href="https://myezmobiledata.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/my-ez-mobile-data.jpg</span><img src="images/my-ez-mobile-data.jpg" alt="My EZ Mobile Data website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Migration, WooCommerce</span><h3>My EZ Mobile Data</h3><p>Shopify to WordPress migration with custom WooCommerce templates.</p></a>
+      <a class="card" href="https://sarayutrust.org" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/saryu-trust.jpg</span><img src="images/saryu-trust.jpg" alt="Saryu Foundation Trust website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Custom post types</span><h3>Saryu Foundation Trust</h3><p>Twig templates, custom fields and post types, Razorpay and PayPal donations.</p></a>
+      <a class="card" href="https://beautybarn.in" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/beautybarn.jpg</span><img src="images/beautybarn.jpg" alt="BeautyBarn website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">REST API</span><h3>BeautyBarn</h3><p>Custom REST APIs for product data and payment integration.</p></a>
+      <a class="card" href="http://norbulingkahotels.org" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/norbulingka.jpg</span><img src="images/norbulingka.jpg" alt="Norbulingka website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Custom theme</span><h3>Norbulingka</h3><p>Custom theme, Razorpay payments and changes to the booking system.</p></a>
+      <a class="card" href="https://www.srishtimanipalinstitute.in" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/srishti-collective.jpg</span><img src="images/srishti-collective.jpg" alt="Srishti Collective website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Student portal</span><h3>Srishti Collective</h3><p>Portal where students add their academic projects, plus events and announcements.</p></a>
     </div>
+    <p class="more muted"><strong>More projects:</strong>
+<a href="https://indiplanner.com" target="_blank" rel="noopener">Indiplanner</a>,
+<a href="https://whatsupinindia.com" target="_blank" rel="noopener">What’s Up India</a>,
+<a href="https://eventsandoffers.com" target="_blank" rel="noopener">Events &amp; Offers</a>,
+<a href="https://www.himtrek.co.in" target="_blank" rel="noopener">Himtrek</a>,
+<a href="https://accountabilityindia.in" target="_blank" rel="noopener">Accountability India</a>,
+<a href="https://www.citizenshealth.in" target="_blank" rel="noopener">Citizens Health</a>,
+<a href="https://prowessadvisors.com" target="_blank" rel="noopener">Prowess Advisors</a>,
+<a href="https://decisionsix.com" target="_blank" rel="noopener">Decision Six</a>,
+<a href="https://cerebralsolutions.in" target="_blank" rel="noopener">Cerebral Solutions</a>,
+<a href="https://www.videovolunteers.org" target="_blank" rel="noopener">Video Volunteers</a>,
+<a href="https://www.milleventsky.com" target="_blank" rel="noopener">Millennium Events</a>,
+Netenrich, Cellworks, Examslo, Heal Security News, Republik, Kalpvriksha Fund, Drift, Cinqo Me, Prapti Consulting.</p>
   </div>
 </section>
 
@@ -170,12 +210,12 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
     <h2>What I can do for you</h2>
     <p class="intro">From a single store to a custom feature that no plugin covers.</p>
     <div class="services">
-      <div><h3>WooCommerce stores</h3><p>Product setup, checkout, payment gateways and shipping rules that fit how you sell.</p></div>
-      <div><h3>Custom plugins</h3><p>Booking systems, API integrations and tools built to your exact workflow.</p></div>
+      <div><h3>WooCommerce stores</h3><p>Custom templates, product setup and checkout flows that fit how you sell.</p></div>
+      <div><h3>Custom plugins</h3><p>Partner portals, taxi and hotel booking, job portals and role-based dashboards.</p></div>
+      <div><h3>Payment gateways</h3><p>Razorpay, PayPal, PayUmoney and custom gateway integrations.</p></div>
+      <div><h3>Migrations and upgrades</h3><p>Shopify to WordPress, WordPress migrations and safe version upgrades.</p></div>
+      <div><h3>APIs and integrations</h3><p>Custom REST APIs, HubSpot forms through the API and Vue.js with WooCommerce products.</p></div>
       <div><h3>Multilingual and RTL sites</h3><p>Hebrew and other right-to-left layouts that look right on every screen.</p></div>
-      <div><h3>Redesigns</h3><p>Fresh design on your existing content, with the SEO you have already earned kept intact.</p></div>
-      <div><h3>Speed and fixes</h3><p>Slow pages, broken checkouts and plugin conflicts, found and fixed.</p></div>
-      <div><h3>Support and maintenance</h3><p>Updates, backups and quick help when something breaks.</p></div>
     </div>
   </div>
 </section>
@@ -230,14 +270,16 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
   <div class="wrap about">
     <div>
       <h2>About me</h2>
-      <p>I'm Harjeet, a freelance WordPress and WooCommerce developer with more than seven years of experience. I work with my sister, who handles front-end design, so every project gets both a solid build and a clean look.</p>
-      <p>[Add two or three sentences about how you work: how you scope, how often you update clients, what you enjoy building.]</p>
+      <p>I'm Harjeet, a WordPress and WooCommerce developer based in Dharamshala, India, with more than seven years of experience in PHP, JavaScript and custom WordPress development. I work with my sister, who handles front-end design, so every project gets both a solid build and a clean look.</p>
+      <p>My work ranges from content sites and student portals to WooCommerce stores, booking systems and partner portals, with a focus on custom plugins and payment integrations.</p>
+      <p><strong>Education:</strong> Bachelor of Computer Applications, Himachal Pradesh University.</p>
       <a class="btn" href="#contact">Work with me</a>
     </div>
     <div>
-      <h3>Tools I use</h3>
+      <h3>Skills</h3>
       <ul class="skills">
-        <li>WordPress</li><li>WooCommerce</li><li>Elementor</li><li>PHP</li><li>JavaScript</li><li>Node.js</li><li>REST APIs</li><li>Payment gateways</li><li>[Add your own]</li>
+        <li>PHP</li><li>RDBMS</li><li>NoSQL</li><li>JavaScript</li><li>jQuery</li><li>Vue.js</li><li>HTML and CSS</li>
+        <li>WordPress</li><li>WooCommerce</li><li>Twig templating</li><li>Custom plugins</li><li>REST APIs</li><li>Payment gateways</li><li>Git</li>
       </ul>
     </div>
   </div>
@@ -263,8 +305,8 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
       <h2>Have a project in mind?</h2>
       <p class="intro">Tell me what you're building and your timeline. I'll reply with questions or a rough plan.</p>
       <div class="links">
-        <a href="mailto:your@email.com">your@email.com</a>
-        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:singhharjeet1922@gmail.com">singhharjeet1922@gmail.com</a>
+        <a href="https://github.com/singhharjeet1922" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
