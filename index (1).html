@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: page title and description (shown in Google) -->
+<title>Harjeet Singh | WordPress &amp; WooCommerce Developer</title>
+<meta name="description" content="Freelance WordPress and WooCommerce developer. Online stores, custom plugins and multilingual sites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* COLORS: change --accent to restyle the whole site */
+:root{--bg:#EEF2F1;--surface:#FFFFFF;--ink:#14211F;--muted:#51635F;--line:#CBD6D3;--accent:#0F6B5C;--on-accent:#FFFFFF;--mark:#F2C14E;
+--head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1716;--surface:#16231F;--ink:#E8F0EE;--muted:#9DB0AB;--line:#26383A;--accent:#4FC3AB;--on-accent:#0E1716}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}.wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1{font:800 clamp(2.6rem,8vw,5.4rem)/1.02 var(--head);letter-spacing:-.03em;margin:0 0 1.25rem;max-width:14ch}
+h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
+h2{font:700 clamp(1.7rem,4vw,2.4rem)/1.15 var(--head);letter-spacing:-.02em;margin:0 0 .75rem}
+h3{font:700 1.2rem var(--head);margin:0 0 .4rem}
+.intro{color:var(--muted);max-width:36rem;margin:0 0 2.25rem}
+section{padding:4.5rem 0}section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.muted{color:var(--muted)}.tag{color:var(--accent);font-weight:600;font-size:.95rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:.5rem;font:600 1rem var(--body);cursor:pointer;text-decoration:none;background:var(--accent);color:var(--on-accent);border:2px solid var(--accent);margin:0 .6rem .6rem 0}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.btn:hover{filter:brightness(1.1)}
+
+
+/* PARALLAX DEPTH */
+.hero-d{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
+.hero-d .hero{position:relative;z-index:2;width:100%}
+.layer{position:absolute;z-index:1;will-change:transform;border:1px solid var(--line);background:var(--surface);border-radius:.8rem;padding:.9rem 1.1rem;color:var(--muted);font:600 .9rem ui-monospace,Menlo,Consolas,monospace;box-shadow:0 22px 40px -18px rgba(0,0,0,.45)}
+.layer i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--line);margin-right:.3rem}
+.layer.hot{color:var(--accent);border-color:var(--accent)}
+.l1{top:10%;right:7%;width:14rem}.l2{top:44%;right:24%;width:11rem}.l3{top:68%;right:5%;width:13rem}
+.l4{top:20%;right:36%;width:9rem;opacity:.75}.l5{top:78%;right:34%;width:10rem;opacity:.8}
+.deco{border-radius:50%;padding:0;border:0;background:var(--accent);opacity:.12;box-shadow:none}
+.d1{width:18rem;height:18rem;top:-4rem;right:-5rem}.d2{width:9rem;height:9rem;bottom:2rem;left:-3rem;background:var(--mark);opacity:.25}
+#about{position:relative;overflow:hidden}#about .wrap{position:relative;z-index:2}
+@media (max-width:48rem){.layer:not(.deco){opacity:.3}}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.9rem;padding-bottom:.9rem}
+.logo{font:800 1.15rem var(--head);text-decoration:none}
+nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-size:.98rem}nav a:hover{color:var(--ink)}
+@media (max-width:42rem){nav a{margin:0 1rem 0 0}}
+
+/* Hero + facts */
+.hero{padding:5.5rem 0 3rem}.hero .lead{max-width:38rem;color:var(--muted);font-size:1.2rem;margin:0 0 2rem}
+.facts{display:flex;flex-wrap:wrap;gap:2.5rem;padding:1.75rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts strong{display:block;font:700 1.9rem var(--head)}.facts span{color:var(--muted)}
+
+/* Trust strip */
+.logos{display:flex;flex-wrap:wrap;gap:.6rem 2rem;color:var(--muted);font:700 1.1rem var(--head);padding-top:1.5rem}
+
+/* Work cards (3D tilt) */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.75rem;perspective:1000px}
+.card{position:relative;display:block;text-decoration:none;transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .2s;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.75rem;min-height:14rem}
+section.alt .card{background:var(--bg)}
+.card:hover{box-shadow:0 25px 45px -20px rgba(0,0,0,.45)}
+.card .tag{display:block;margin-bottom:2.25rem;transform:translateZ(60px)}.card h3{transform:translateZ(45px)}.card p{margin:0;color:var(--muted);transform:translateZ(22px)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem 2.5rem}.services p{margin:0;color:var(--muted)}
+
+/* Process (a true sequence, so numbered) */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
+.steps li{counter-increment:s;border-top:3px solid var(--accent);padding-top:1rem}
+.steps li::before{content:counter(s);font:800 2rem var(--head);color:var(--accent);display:block}
+.steps p{margin:0;color:var(--muted)}
+
+/* Pricing */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;align-items:stretch}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:2rem;display:flex;flex-direction:column}
+.plan.pick{border:2px solid var(--accent)}
+.plan .price{font:800 2.2rem var(--head);margin:.25rem 0}.plan ul{padding-left:1.1rem;color:var(--muted);margin:1rem 0 1.5rem;flex:1}
+.plan .btn{margin:0;text-align:center}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.75rem}
+blockquote{margin:0;padding:1.5rem;border-left:4px solid var(--accent);background:var(--bg);border-radius:0 .75rem .75rem 0}
+section.alt blockquote{background:var(--bg)}blockquote p{margin:0 0 .75rem}blockquote footer{color:var(--muted);font-size:.95rem}
+
+/* About + skills */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}.about p{margin:0 0 1rem;max-width:40rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem}.skills li{list-style:none;border:1px solid var(--line);border-radius:2rem;padding:.3rem .9rem;color:var(--muted);font-size:.95rem}
+.skills{padding:0;margin:0}@media (max-width:48rem){.about{grid-template-columns:1fr}}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:1.1rem 0}details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font:700 1.1rem var(--head);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}details p{margin:.75rem 0 0;color:var(--muted);max-width:40rem}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem}@media (max-width:48rem){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:1rem}label{font-weight:600;display:grid;gap:.35rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:.5rem;padding:.75rem .9rem;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}textarea{min-height:8rem;resize:vertical}
+.links a{display:block;margin-bottom:.4rem}
+
+footer.site{padding:2.5rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <!-- EDIT: your name or brand -->
+    <a class="logo" href="#top">Harjeet Singh</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a>
+      <a href="#pricing">Pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO: EDIT headline, intro, facts -->
+<div class="hero-d">
+  <!-- EDIT: the floating labels. Use your own tools, file names or keywords. data-speed: higher = slower drift -->
+  <div class="layer l1" data-speed="0.18" aria-hidden="true"><i></i><i></i><i></i><br>checkout.php</div>
+  <div class="layer l2 hot" data-speed="0.4" aria-hidden="true">WooCommerce</div>
+  <div class="layer l3" data-speed="0.1" aria-hidden="true"><i></i><i></i><i></i><br>/api/booking</div>
+  <div class="layer l4" data-speed="0.3" aria-hidden="true">Elementor</div>
+  <div class="layer l5 hot" data-speed="0.22" aria-hidden="true">RTL ready</div>
+  <div class="wrap hero">
+  <h1>WordPress sites that <span>sell</span> and scale.</h1>
+  <p class="lead">I build WooCommerce stores, custom plugins and multilingual websites for small businesses and agencies. Based in India, working with clients worldwide.</p>
+  <a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#work">See my work</a>
+</div>
+</div>
+<div class="wrap">
+  <div class="facts">
+    <div><strong>7+</strong><span>years with WordPress</span></div>
+    <div><strong>2</strong><span>people: developer and designer</span></div>
+    <div><strong>RTL</strong><span>Hebrew and right-to-left sites</span></div>
+    <div><strong>[00]</strong><span>[projects delivered]</span></div>
+  </div>
+  <!-- EDIT: client or brand names you have worked with (delete if none) -->
+  <div class="logos" aria-label="Brands I have worked with"><span>Organic Fiji</span><span>[Client]</span><span>[Client]</span><span>[Client]</span></div>
+</div>
+
+<!-- 2. WORK: copy a whole card to add projects -->
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="intro">A few recent projects. Each one links to the live site.</p>
+    <div class="grid">
+      <a class="card" href="https://organicfiji.com" target="_blank" rel="noopener"><span class="tag">WooCommerce</span><h3>Organic Fiji</h3><p>Soap brand store, built end to end: design, products and checkout.</p></a>
+      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Custom plugin]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Hebrew / RTL]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Elementor]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Redesign]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+      <a class="card" href="https://example.com" target="_blank" rel="noopener"><span class="tag">[Booking system]</span><h3>[Project name]</h3><p>[One sentence: the problem and what you delivered.]</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <h2>What I can do for you</h2>
+    <p class="intro">From a single store to a custom feature that no plugin covers.</p>
+    <div class="services">
+      <div><h3>WooCommerce stores</h3><p>Product setup, checkout, payment gateways and shipping rules that fit how you sell.</p></div>
+      <div><h3>Custom plugins</h3><p>Booking systems, API integrations and tools built to your exact workflow.</p></div>
+      <div><h3>Multilingual and RTL sites</h3><p>Hebrew and other right-to-left layouts that look right on every screen.</p></div>
+      <div><h3>Redesigns</h3><p>Fresh design on your existing content, with the SEO you have already earned kept intact.</p></div>
+      <div><h3>Speed and fixes</h3><p>Slow pages, broken checkouts and plugin conflicts, found and fixed.</p></div>
+      <div><h3>Support and maintenance</h3><p>Updates, backups and quick help when something breaks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROCESS: EDIT the steps to match how you really work -->
+<section id="process">
+  <div class="wrap">
+    <h2>How a project works</h2>
+    <p class="intro">Clear steps, so you always know what happens next.</p>
+    <ol class="steps">
+      <li><h3>Discovery</h3><p>We talk through goals, content and budget. You get a written scope.</p></li>
+      <li><h3>Proposal</h3><p>A fixed price and timeline, agreed before any work starts.</p></li>
+      <li><h3>Design and build</h3><p>My sister designs, I build. You review a staging site along the way.</p></li>
+      <li><h3>Launch</h3><p>Testing, migration and go-live, with a checklist.</p></li>
+      <li><h3>Support</h3><p>[30 days] of free fixes, then optional monthly care.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. PRICING: EDIT names, prices and lists. Delete this section if you quote per project. -->
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <h2>Packages</h2>
+    <p class="intro">Starting prices. Every project gets a fixed quote after a short call.</p>
+    <div class="plans">
+      <div class="plan"><h3>Starter site</h3><div class="price">[$000]</div><span class="muted">[5 pages, 2 weeks]</span>
+        <ul><li>Custom design</li><li>Mobile-ready</li><li>Basic SEO setup</li></ul><a class="btn ghost" href="#contact">Ask about this</a></div>
+      <div class="plan pick"><h3>WooCommerce store</h3><div class="price">[$000]</div><span class="muted">[up to 50 products, 4 weeks]</span>
+        <ul><li>Payment gateway setup</li><li>Shipping and tax rules</li><li>Speed tuning</li><li>[30 days] support</li></ul><a class="btn" href="#contact">Ask about this</a></div>
+      <div class="plan"><h3>Custom plugin</h3><div class="price">[$000]</div><span class="muted">[scoped per project]</span>
+        <ul><li>Written spec first</li><li>Tested and documented</li><li>Source code is yours</li></ul><a class="btn ghost" href="#contact">Ask about this</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. TESTIMONIALS: replace with real client quotes -->
+<section id="testimonials">
+  <div class="wrap">
+    <h2>What clients say</h2>
+    <p class="intro">[Short quotes from real clients. Ask permission to use their name.]</p>
+    <div class="quotes">
+      <blockquote><p>[A sentence or two about the result and what it was like to work with you.]</p><footer>[Client name], [role, company]</footer></blockquote>
+      <blockquote><p>[A sentence or two about the result and what it was like to work with you.]</p><footer>[Client name], [role, company]</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ABOUT + TOOLS -->
+<section id="about" class="alt">
+  <div class="layer deco d1" data-speed="0.25" aria-hidden="true"></div>
+  <div class="layer deco d2" data-speed="0.45" aria-hidden="true"></div>
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p>I'm Harjeet, a freelance WordPress and WooCommerce developer with more than seven years of experience. I work with my sister, who handles front-end design, so every project gets both a solid build and a clean look.</p>
+      <p>[Add two or three sentences about how you work: how you scope, how often you update clients, what you enjoy building.]</p>
+      <a class="btn" href="#contact">Work with me</a>
+    </div>
+    <div>
+      <h3>Tools I use</h3>
+      <ul class="skills">
+        <li>WordPress</li><li>WooCommerce</li><li>Elementor</li><li>PHP</li><li>JavaScript</li><li>Node.js</li><li>REST APIs</li><li>Payment gateways</li><li>[Add your own]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FAQ: EDIT questions and answers -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions people ask</h2>
+    <p class="intro">Still unsure? Send a message and I'll answer within [one business day].</p>
+    <details><summary>How long does a project take?</summary><p>[A simple site takes about two weeks and a store about four. Custom work depends on scope.]</p></details>
+    <details><summary>Do you work with clients outside India?</summary><p>[Yes. I work remotely and share progress on a staging site and by [email/WhatsApp/Slack].]</p></details>
+    <details><summary>How do payments work?</summary><p>[Example: 50% to start, 50% at launch. Add your accepted payment methods.]</p></details>
+    <details><summary>Who owns the website and code?</summary><p>[You do, once the final payment is made.]</p></details>
+    <details><summary>Can you fix or take over an existing site?</summary><p>[Yes. I start with a short audit so you know what needs work before you commit.]</p></details>
+  </div>
+</section>
+
+<!-- 9. CONTACT: set the form action (see notes) and your links -->
+<section id="contact" class="alt">
+  <div class="wrap contact">
+    <div>
+      <h2>Have a project in mind?</h2>
+      <p class="intro">Tell me what you're building and your timeline. I'll reply with questions or a rough plan.</p>
+      <div class="links">
+        <a href="mailto:your@email.com">your@email.com</a>
+        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <!-- EDIT: sign up free at formspree.io, create a form, and paste its URL into action -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>What do you need?
+        <select name="type"><option>WooCommerce store</option><option>New website</option><option>Custom plugin</option><option>Redesign</option><option>Fix or support</option><option>Something else</option></select>
+      </label>
+      <label>Project details<textarea name="message" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><span>&copy; <span id="y">2026</span> Harjeet Singh</span><span><a href="#top">Back to top</a></span></div>
+</footer>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
+document.querySelectorAll(".card").forEach(function(c){
+ c.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  c.style.transform="rotateY("+((x-.5)*14)+"deg) rotateX("+((.5-y)*14)+"deg) scale(1.02)"});
+ c.addEventListener("mouseleave",function(){c.style.transform=""})})}
+
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
+var L=[].slice.call(document.querySelectorAll(".layer")),mx=0,busy=false;
+function draw(){busy=false;L.forEach(function(l){var p=l.parentElement.getBoundingClientRect();
+ if(p.bottom<-200||p.top>innerHeight+200)return;
+ var s=parseFloat(l.dataset.speed),off=p.top+p.height/2-innerHeight/2;
+ l.style.transform="translate3d("+(mx*60*s)+"px,"+(-off*s)+"px,0) rotate("+(off*s*.015)+"deg)"})}
+function ask(){if(!busy){busy=true;requestAnimationFrame(draw)}}
+addEventListener("scroll",ask,{passive:true});addEventListener("resize",ask);
+addEventListener("mousemove",function(e){mx=e.clientX/innerWidth-.5;ask()});draw()}
+</script>
+</body>
+</html>
