@@ -113,6 +113,17 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
 .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .card .tag{margin-bottom:.3rem}
 .more{margin:2.5rem 0 0;max-width:46rem}.more a{color:var(--accent)}
+
+/* Resume popup */
+.rmodal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.65)}
+.rmodal[hidden]{display:none}
+.rbox{width:min(60rem,100%);height:min(92vh,56rem);display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:1rem;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+.rbar{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;padding:.75rem 1rem;border-bottom:1px solid var(--line)}
+.rbar strong{font:700 1.1rem var(--head)}.rbar #rmStatus{flex:1;min-width:8rem;font-size:.95rem}
+.rbar .btn{margin:0;padding:.55rem 1.1rem}
+.rbox iframe{flex:1;width:100%;border:0;background:#fff}
+.rnote{margin:0;padding:.6rem 1rem;font-size:.9rem;color:var(--muted);border-top:1px solid var(--line)}
+.rnote a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -123,7 +134,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
     <a class="logo" href="#top">Harjeet Singh</a>
     <nav aria-label="Main">
       <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a>
-      <a href="#pricing">Pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="Harjeet-Singh-Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="#contact">Contact</a>
+      <a href="#pricing">Pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="Harjeet-Singh-Resume.pdf" target="_blank" rel="noopener" data-resume>Resume</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -160,15 +171,15 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
     <h2>Selected work</h2>
     <p class="intro">Recent projects, each linking to the live site. Screenshots load from the images folder next to this file.</p>
     <div class="grid">
-      <a class="card" href="https://www.telco.com" target="_blank" rel="noopener">
-        <div class="shot"><span>Add screenshot: images/telco.png</span><img src="images/telco.png" alt="Telco website screenshot" loading="lazy" onerror="this.remove()"></div>
-        <span class="tag">Custom plugin</span><h3>Telco</h3><p>Partner portal plugin with custom templates and custom filters.</p></a>
       <a class="card" href="https://organicfiji.com" target="_blank" rel="noopener">
         <div class="shot"><span>Add screenshot: images/organic-fiji.png</span><img src="images/organic-fiji.png" alt="Organic Fiji website screenshot" loading="lazy" onerror="this.remove()"></div>
         <span class="tag">WooCommerce store</span><h3>Organic Fiji</h3><p>Soap brand store, built end to end: design, products and checkout.</p></a>
       <a class="card" href="https://preciouscarbon.com" target="_blank" rel="noopener">
         <div class="shot"><span>Add screenshot: images/precious-carbon.png</span><img src="images/precious-carbon.png" alt="Precious Carbon website screenshot" loading="lazy" onerror="this.remove()"></div>
         <span class="tag">WooCommerce, Vue.js</span><h3>Precious Carbon</h3><p>Custom WooCommerce templates, Vue.js product display and Razorpay payments.</p></a>
+      <a class="card" href="https://www.telco.com" target="_blank" rel="noopener">
+        <div class="shot"><span>Add screenshot: images/telco.png</span><img src="images/telco.png" alt="Telco website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <span class="tag">Custom plugin</span><h3>Telco</h3><p>Partner portal plugin with custom templates and custom filters.</p></a>
       <a class="card" href="https://taxiinindia.com" target="_blank" rel="noopener">
         <div class="shot"><span>Add screenshot: images/taxi-in-india.png</span><img src="images/taxi-in-india.png" alt="Taxi in India website screenshot" loading="lazy" onerror="this.remove()"></div>
         <span class="tag">Booking plugin</span><h3>Taxi in India</h3><p>Custom taxi booking plugin with a custom payment gateway.</p></a>
@@ -228,7 +239,7 @@ Netenrich, Cellworks, Examslo, Heal Security News, Republik, Kalpvriksha Fund, D
     <ol class="steps">
       <li><h3>Discovery</h3><p>We talk through goals, content and budget. You get a written scope.</p></li>
       <li><h3>Proposal</h3><p>A fixed price and timeline, agreed before any work starts.</p></li>
-      <li><h3>Design and build</h3><p>My sister designs, I build. You review a staging site along the way.</p></li>
+      <li><h3>Design and build</h3><p>I design and build the site, and you review a staging site along the way.</p></li>
       <li><h3>Launch</h3><p>Testing, migration and go-live, with a checklist.</p></li>
       <li><h3>Support</h3><p>[30 days] of free fixes, then optional monthly care.</p></li>
     </ol>
@@ -270,7 +281,7 @@ Netenrich, Cellworks, Examslo, Heal Security News, Republik, Kalpvriksha Fund, D
   <div class="wrap about">
     <div>
       <h2>About me</h2>
-      <p>I'm Harjeet, a WordPress and WooCommerce developer based in Dharamshala, India, with more than seven years of experience in PHP, JavaScript and custom WordPress development. I work with my sister, who handles front-end design, so every project gets both a solid build and a clean look.</p>
+      <p>I'm Harjeet, a WordPress and WooCommerce developer based in Dharamshala, India, with more than seven years of experience in PHP, JavaScript and custom WordPress development.</p>
       <p>My work ranges from content sites and student portals to WooCommerce stores, booking systems and partner portals, with a focus on custom plugins and payment integrations.</p>
       <p><strong>Education:</strong> Bachelor of Computer Applications, Himachal Pradesh University.</p>
       <a class="btn" href="#contact">Work with me</a><a class="btn ghost" href="Harjeet-Singh-Resume.pdf" download>Download resume</a>
@@ -346,6 +357,55 @@ function draw(){busy=false;L.forEach(function(l){var p=l.parentElement.getBoundi
 function ask(){if(!busy){busy=true;requestAnimationFrame(draw)}}
 addEventListener("scroll",ask,{passive:true});addEventListener("resize",ask);
 addEventListener("mousemove",function(e){mx=e.clientX/innerWidth-.5;ask()});draw()}
+</script>
+
+<!-- RESUME POPUP: opens from the Resume menu link, then downloads the PDF after 2 seconds -->
+<div class="rmodal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="rmTitle" hidden>
+  <div class="rbox">
+    <div class="rbar">
+      <strong id="rmTitle">Resume</strong>
+      <span id="rmStatus" class="muted" aria-live="polite"></span>
+      <a class="btn" id="rmDownload" href="Harjeet-Singh-Resume.pdf" download>Download now</a>
+      <button type="button" class="btn ghost" id="rmClose">Close</button>
+    </div>
+    <iframe id="rmFrame" title="Resume preview"></iframe>
+    <p class="rnote">Preview not showing on your phone? <a href="Harjeet-Singh-Resume.pdf" download>Download the PDF</a> instead.</p>
+  </div>
+</div>
+<script>
+(function(){
+var PDF="Harjeet-Singh-Resume.pdf",DELAY=2; /* EDIT: change DELAY to change the seconds before the download starts */
+var link=document.querySelector("[data-resume]"),m=document.getElementById("resumeModal"),
+    frame=document.getElementById("rmFrame"),status=document.getElementById("rmStatus"),
+    closeBtn=document.getElementById("rmClose"),dl=document.getElementById("rmDownload"),timer=null,last=null;
+if(!link||!m)return;
+function download(){var a=document.createElement("a");a.href=PDF;a.download="Harjeet-Singh-Resume.pdf";document.body.appendChild(a);a.click();a.remove();status.textContent="Download started."}
+function open(e){
+  e.preventDefault();last=document.activeElement;
+  m.hidden=false;document.body.style.overflow="hidden";
+  frame.src=PDF+"#toolbar=0&navpanes=0";closeBtn.focus();
+  var n=DELAY;status.textContent="Your download starts in "+n+"s...";
+  clearInterval(timer);
+  timer=setInterval(function(){n--;
+    if(n>0){status.textContent="Your download starts in "+n+"s..."}
+    else{clearInterval(timer);download()}},1000);
+}
+function close(){
+  clearInterval(timer);m.hidden=true;document.body.style.overflow="";frame.src="about:blank";
+  if(last&&last.focus)last.focus();
+}
+link.addEventListener("click",open);
+closeBtn.addEventListener("click",close);
+m.addEventListener("click",function(e){if(e.target===m)close()});
+dl.addEventListener("click",function(){clearInterval(timer);status.textContent="Download started."});
+document.addEventListener("keydown",function(e){
+  if(m.hidden)return;
+  if(e.key==="Escape")close();
+  if(e.key==="Tab"){var f=[dl,closeBtn,m.querySelector(".rnote a")],i=f.indexOf(document.activeElement);
+    if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}
+    else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}
+});
+})();
 </script>
 </body>
 </html>
