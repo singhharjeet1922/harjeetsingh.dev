@@ -16,7 +16,12 @@
 @media (prefers-color-scheme:dark){:root{--bg:#0E1716;--surface:#16231F;--ink:#E8F0EE;--muted:#9DB0AB;--line:#26383A;--accent:#4FC3AB;--on-accent:#0E1716}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
-a{color:inherit}.wrap{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+a{color:inherit}
+.wrap {
+  max-width:70rem;
+  margin:0 auto;
+  padding:0 1.5rem;
+}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 h1{font:800 clamp(2.6rem,8vw,5.4rem)/1.02 var(--head);letter-spacing:-.03em;margin:0 0 1.25rem;max-width:14ch}
 h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%)}
@@ -55,14 +60,51 @@ nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-size:.98re
 .facts strong{display:block;font:700 1.9rem var(--head)}.facts span{color:var(--muted)}
 
 /* Trust strip */
-.logos{display:flex;flex-wrap:wrap;gap:.6rem 2rem;color:var(--muted);font:700 1.1rem var(--head);padding-top:1.5rem}
+.logos {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem 2rem;
+  color:var(--muted);
+  font:700 1.1rem var(--head);
+  padding-top:1.5rem
+}
 
 /* Work cards (3D tilt) */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.75rem;perspective:1000px}
-.card{position:relative;display:block;text-decoration:none;transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .2s;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.75rem;min-height:14rem}
-section.alt .card{background:var(--bg)}
-.card:hover{box-shadow:0 25px 45px -20px rgba(0,0,0,.45)}
-.card .tag{display:block;margin-bottom:2.25rem;transform:translateZ(60px)}.card h3{transform:translateZ(45px)}.card p{margin:0;color:var(--muted);transform:translateZ(22px)}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
+  gap:1.75rem;
+  perspective:1000px */
+}
+.card {
+  position:relative;
+  display:block;
+  text-decoration:none;
+  transform-style:preserve-3d;
+  transition:transform .15s ease-out,box-shadow .2s;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:1rem;
+  /* padding:1.75rem; */
+  padding: 15px;
+  min-height:14rem;
+}
+section.alt .card {
+  background:var(--bg);
+}
+.card:hover {
+  box-shadow:0 25px 45px -20px rgba(0,0,0,.45);
+}
+.card .tag {
+  display:block;
+  margin-bottom:2.25rem;
+  transform:translateZ(60px);
+}
+.card h3 {
+  transform:translateZ(45px); 
+}.card p{margin:0;color:var(--muted);transform:translateZ(22px)}
 
 /* Services */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2.25rem 2.5rem}.services p{margin:0;color:var(--muted)}
@@ -187,7 +229,7 @@ footer.site .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:
         <div class="shot"><span>Add screenshot: images/my-ez-mobile-data.png</span><img src="images/my-ez-mobile-data.png" alt="EZ Mobile Data website screenshot" loading="lazy" onerror="this.remove()"></div>
         <span class="tag">Migration, WooCommerce</span><h3>My EZ Mobile Data</h3><p>Shopify to WordPress migration with custom WooCommerce templates.</p></a>
       <a class="card" href="https://accountabilityindia.in" target="_blank" rel="noopener">
-        <div class="shot"><span>Add screenshot: images/accountibility.png</span><img src="images/accountibility.png" alt="Accountability India website screenshot" loading="lazy" onerror="this.remove()"></div>
+        <div class="shot"><span>Add screenshot: images/accountibility.png</span><img src="images/accountiblity.png" alt="Accountability India website screenshot" loading="lazy" onerror="this.remove()"></div>
         <span class="tag">Custom post types</span><h3>Accountability India</h3><p>Twig templates, custom fields and post types, Razorpay and PayPal donations.</p></a>
       <a class="card" href="https://beautybarn.in" target="_blank" rel="noopener">
         <div class="shot"><span>Add screenshot: images/beautybarn.png</span><img src="images/beautybarn.png" alt="BeautyBarn website screenshot" loading="lazy" onerror="this.remove()"></div>
