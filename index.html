@@ -73,6 +73,8 @@ nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-size:.98re
 .grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
   /* display:grid;
   grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
   gap:1.75rem;
@@ -81,6 +83,7 @@ nav a{margin-left:1.2rem;text-decoration:none;color:var(--muted);font-size:.98re
 .card {
   position:relative;
   display:block;
+  flex: 0 0 30%;
   text-decoration:none;
   transform-style:preserve-3d;
   transition:transform .15s ease-out,box-shadow .2s;
